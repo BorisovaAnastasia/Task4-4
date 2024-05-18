@@ -50,14 +50,16 @@
                             <Image Source="{Binding ImagePath, Converter={x:Static infrastructure:BitmapValueConverter.Instance}}"
                                     Height="100" />
         
-                            <ItemsControl ItemsSource="{Binding Tags}">
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <StackPanel Orientation="Horizontal" />
-                                    </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel>
-                            </ItemsControl>
-                            
+                            <StackPanel Orientation = "Horizontal">
+                                <ItemsControl ItemsSource="{Binding Tags}"> 
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <StackPanel Orientation="Horizontal" />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                </ItemsControl>
+                                <TextBlock TextAlignment = "Right" Text="{Binding Rate}"/>
+                            </StackPanel>                            
                         </StackPanel>
                     
                 </DataTemplate>
